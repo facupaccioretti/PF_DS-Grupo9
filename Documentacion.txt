@@ -1,0 +1,53 @@
+
+                                SEMANA 1
+
+Contextualización y puesta en marcha: 
+
+Se inicia este proyecto definiendo los roles de cada integrante, en base a el/las áreas de mayor confianza 
+para cada uno. Si bien acordamos que serian roles flexibles, definimos nuestras posiciones de esta manera:
+D. Engineers : Helio Forera, Martin Piñeiro. 
+D. Analytics: Blas Colillas, Facundo Paccioretti. 
+D. Scientist: Ramon Blanc. 
+
+Pasamos luego a realizar todos los integrantes una investigación general sobre la empresa, para comprender el 
+problema y su contexto a nivel país/región, tipo de negocio.  
+
+Se hizo un primer acercamiento a los datos disponibles (que información proveen, en que ventana temporal) y 
+además, una búsqueda de datos extras que pudieran enriquecer nuestro análisis. Si pudimos observar información
+relevante general de Brasil, de tipo socio-económica. Pero no encontramos fuentes de datos que complementen 
+directamente a las ya disponibles (ej datasets de competidores locales o regionales, de la misma empresa pero 
+en otro país, tablas extra de la empresa que pudiesen no estar en el conjunto de tablas provisto). Con lo cual  
+se decidió trabajar con los datos ya disponibles. 
+
+Decidimos implementar una metodología de trabajo del tipo ágil, dentro de un marco de trabajo Scrum y tomando 
+una parte del marco Kanban (la tabla de distribución de tareas, con la app 'Clickup'). Ya que permiten mayor 
+flexibilidad, esencial para este tipo de proyectos. 
+
+Se paso entonces a la asignación de tareas de la semana. Igualmente, mantuvimos temas 
+centrales como los KPI's en discusiones entre todos los integrantes. 
+
+Habiendo definido y tomado contacto con los Datasets, se definió el alcance y los objetivos del proyecto, 
+hacia donde lo orientaríamos, y los KPI's asociados a nuestro análisis. Se mantendrá el análisis dentro del 
+alcance de los datos, es decir, dentro de Brasil, y entre los años 2016-2018.
+En paralelo, se procedió al EDA preliminar (con python, pandas) y su respectivo Informe de Calidad de Datos, 
+que a su vez nos sirvió para una mejor definición de KPI's. 
+Se identifican algunos datasets con tipos de dato a transformar, columnas con mayoría de datos nulos, e 
+información que requiere de Normalización (traducción del portugués, datos fuera de la ventana de tiempo) y 
+mayor profundidad de análisis (ej geolocalización). En general la información es completa.
+
+Definición de stack tecnológico: en proceso. 
+
+Amazon Glue: ETL (Extraction, Transformation, and Load) 
+Amazon S3: Almacenamiento General 
+Amazon RDS: Bases de datos (RDS: Relational Database Service)
+Amazon Lambda: Resuelve código y su uso es por ejecución.
+Amazon EC2: Crea una instancia de cómputo y su uso es por hora.
+Python: Se utilizará para computó especialmente en Machine Learning
+Amazon Redshift: Utilidad para crear y administrar Data Warehouse
+Airflow: Automatización del flujo de trabajo. Permite que automáticamente resultados de una parte del proceso 
+sean usados por otra parte cuando son creados nuevamente. 
+Amazon QuickSight: Herramienta de visualización y Business Intelligence. 
+
+
+
+
