@@ -1,0 +1,81 @@
+CREATE TABLE "public"."closed_deals" ( mql_id character varying(256) encode lzo, 
+                                    seller_id character varying(256) encode lzo,
+                                    sdr_id character varying(256) encode lzo, 
+                                    sr_id character varying(256) encode lzo, 
+                                    won_date timestamp without time zone encode az64, 
+                                    business_segment character varying(256) encode lzo, 
+                                    lead_type character varying(256) encode lzo, 
+                                    lead_behaviour_profile character varying(256) encode lzo, 
+                                    business_type character varying(256) encode lzo, CONSTRAINT 
+                                    closed_deals_seller_id_key UNIQUE (seller_id),
+                                    CONSTRAINT closed_deals_mql_id_key UNIQUE (mql_id));
+
+CREATE TABLE "public"."customer"(customer_id              character varying(256) NOT NULL encode lzo,
+                                 customer_zip_code_prefix integer encode az64,
+                                 customer_city            character varying(256) encode lzo,
+                                 customer_state           character varying(256) encode lzo,
+                                 CONSTRAINT customer_pkey PRIMARY KEY(customer_id));
+
+
+
+CREATE TABLE "public"."mql"(mql_id             character varying(256) NOT NULL encode lzo,
+                            first_contact_date timestamp without time zone encode az64,
+                            landing_page_id    character varying(256) encode lzo,
+                            origin             character varying(256) encode lzo,
+                            CONSTRAINT mql_pkey PRIMARY KEY(mql_id));
+
+CREATE TABLE "public"."order_item" ( order_id character varying(256) encode lzo, order_item_id character varying(256) encode lzo, 
+                                    product_id character varying(256) encode lzo, seller_id character varying(256) encode lzo, 
+                                    shipping_limit_date timestamp without time zone encode az64, 
+                                    price numeric(18,0) encode az64, freight_value numeric(18,0) encode az64, 
+                                    CONSTRAINT order_item_seller_id_key UNIQUE (seller_id),
+                                    CONSTRAINT order_item_product_id_key UNIQUE (product_id),
+                                    CONSTRAINT order_item_order_id_key UNIQUE (order_id));
+
+CREATE TABLE "public"."order_payments" ( order_id character varying(256) encode lzo, 
+                                        payment_sequential bigint encode az64, 
+                                        payment_type character varying(256) encode lzo, 
+                                        payment_installments bigint encode az64, 
+                                        payment_value numeric(18,0) encode az64, 
+                                        CONSTRAINT order_payments_order_id_key UNIQUE (order_id));
+
+CREATE TABLE "public"."order_reviews" ( review_id character varying(256) NOT NULL encode lzo, 
+                                        order_id character varying(256) encode lzo, 
+                                        review_score bigint encode az64, 
+                                        review_comment_title character varying(256) encode lzo, 
+                                        review_comment_message character varying(256) encode lzo, 
+                                        review_creation_date timestamp without time zone encode az64, 
+                                        CONSTRAINT order_reviews_pkey PRIMARY KEY(review_id), 
+                                        CONSTRAINT order_reviews_order_id_key UNIQUE (order_id));
+
+CREATE TABLE "public"."orders"(order_id                      character varying(256) NOT NULL encode lzo,
+                               customer_id                   character varying(256) encode lzo,
+                               order_status                  character varying(256) encode lzo,
+                               order_purchase_timestamp      timestamp without time zone encode az64,
+                               order_approved_at             timestamp without time zone encode az64,
+                               order_delivered_carrier_date  timestamp without time zone encode az64,
+                               order_delivered_customer_date timestamp without time zone encode az64,
+                               order_estimated_delivery_date timestamp without time zone encode az64,
+                               CONSTRAINT orders_pkey PRIMARY KEY(order_id),
+                               CONSTRAINT orders_customer_id_key UNIQUE (customer_id));
+
+CREATE TABLE "public"."sellers"(seller_id              character varying(256) NOT NULL encode lzo,
+                                seller_zip_code_prefix integer encode az64,
+                                seller_city            character varying(256) encode lzo,
+                                seller_state           character varying(256) encode lzo,
+                                CONSTRAINT sellers_pkey PRIMARY KEY(seller_id));
+
+CREATE TABLE "public"."products"(product_id                    character varying(256) NOT NULL encode lzo,
+                                 product_category_name         character varying(256) encode lzo,
+                                 product_weight_g              numeric(18,6) encode az64,
+                                 product_length_cm             numeric(18,6) encode az64,
+                                 product_height_cm             numeric(18,6) encode az64,
+                                 product_width_cm              integer encode az64,
+                                 product_category_name_english character varying(256) encode lzo,
+                                 CONSTRAINT products_pkey PRIMARY KEY(product_id));
+
+CREATE TABLE "public"."geolocation"(geolocation_zip_code_prefix integer encode az64,
+                                    geolocation_lat             numeric(18,6) encode az64,
+                                    geolocation_lng             numeric(18,6) encode az64,
+                                    geolocation_city            character varying(256) encode lzo,
+                                    geolocation_state           character varying(256) encode lzo);
