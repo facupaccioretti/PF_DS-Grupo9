@@ -21,7 +21,7 @@ Desarrollamos este proyecto con la idea de cumplir con todos los objetivos propu
  
 
 ## **Equipo de trabajo G9C:**
-https://raw.github.com/facupaccioretti/PF_DS-Grupo9/tree/semana2/assets/equipo.jpeg
+https://raw.githubusercontent.com/facupaccioretti/PF_DS-Grupo9/tree/semana2/assets/equipo.jpeg
 
 ## **Datos:**
 
@@ -40,7 +40,7 @@ Luego, también usando Glue, cargamos estos datos en Amazon Redshift. Amazon Red
 Para finalizar, utilizamos Amazon SageMaker para la implementación de nuestros modelos de Machine Learning y Amazon QuickSight para la visualización de los datos. Al ser todas estas herramientas proporcionadas por AWS, fue simple la conexión entre ellas.
 
 Queda adjunta una imagen del workflow del proyecto, para facilitar el entendimiento del proceso:
-https://raw.github.com/facupaccioretti/PF_DS-Grupo9/tree/semana2/assets/workflow.jpeg
+https://raw.githubusercontent.com/facupaccioretti/PF_DS-Grupo9/tree/semana2/assets/workflow.jpeg
 
 ## **Análisis de datos:**
 Planteamos KPIs asociados a los objetivos y los visualizamos en un Dashboard con una estructura que lo divide en los departamentos de Ventas, Marketing y Logística, dejando en claro cuál es el target de las distintas páginas del dashboard. El mismo, brinda información valiosa para facilitar en la empresa la toma de decisiones y el desarrollo de estrategias.
@@ -55,8 +55,7 @@ Construimos dos modelos de ML, de Procesamiento de lenguaje y Análisis de Senti
 Para el primero, de Clasificación, usamos Random Forest. Tiene como objetivo decidir si un comentario es positivo o negativo. Para el entrenamiento, se discretizaron los puntajes de reviews, obteniendo así Accuracy y Recall por encima de 0.80. 
 Para el segundo modelo utilizamos LDA (Latent Dirichlet Allocation), de aprendizaje No Supervisado, el cual extrae de un grupo de documentos, los principales temas y términos dentro de el. Se analizan los comentarios por su review score, es decir, los agrupamos en 5 categorías. De esta manera, se tiene un control y monitoreo del cuerpo entero de mensajes, permitiendo saber fácilmente  cuales temas son los de mayor peso para los clientes, según puntuación de review. Estos resultados se visualizan dentro del dashboard de Marketing como una tabla de fácil lectura que agrupa los 3 principales topics, a su vez con los 3 principales 3-eneagramas para cada review score.
 
-https://raw.github.com/facupaccioretti/PF_DS-Grupo9/tree/semana2/assets/salidaML.jpeg
-
+https://raw.githubusercontent.com/facupaccioretti/PF_DS-Grupo9/tree/semana2/assets/salidaML.jpeg
 ## **Recomendaciones y cierre:**
 
 + Departamento de ventas: Buscar contratos con nuevos vendedores en río de janeiro, que es la segunda economía estatal más grande de Brasil (el doble de grande que Paraná) y tiene un 40% menos de ingresos por ventas que Paraná.
