@@ -61,3 +61,5 @@ https://raw.githubusercontent.com/facupaccioretti/PF_DS-Grupo9/tree/semana2/asse
 + Departamento de ventas: Buscar contratos con nuevos vendedores en río de janeiro, que es la segunda economía estatal más grande de Brasil (el doble de grande que Paraná) y tiene un 40% menos de ingresos por ventas que Paraná.
 + Departamento de marketing: Proveer componentes necesarios en la base de datos, para completar un Embudo de ventas, y poder presentar detalladamente las etapas por las que pasa un cliente potencial desde el primer contacto con la empresa hasta el cierre de la venta (presupuesto de marketing, clics en la web).
 + Departamento de logística: Mejorar la estimación de las entregas(que en promedio se entregan 11 días antes de lo estimado). Lo ideal sería bajar algunos días este promedio, donde mantenes un margen de error en la estimación y no arriesgas a una caída del score.
+
+Video explicativo y promocional del proyecto: https://www.youtube.com/watch?v=BDv_Q6eAG-w
